@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#ffffff"><meta name="description" content="VisaHOBe Agent — your personal AI browser and workspace"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><title>VisaHOBe Agent</title></head>
+<body><div class="app-shell">
+<aside class="sidebar" id="sidebar">
+<div class="brand"><div class="brand-text"><strong>VisaHOBe</strong></div><button class="icon-btn close-sidebar" id="closeSidebar" aria-label="Close navigation">×</button></div>
+<button class="new-chat-btn" id="newChatBtn">+ New chat</button>
+<div class="side-search" id="sideSearchWrap"><input id="sideSearch" placeholder="Search chats" autocomplete="off"></div>
+<div class="side-quick"><button class="side-row" id="imagesBtn"><span>🖼</span> Images</button></div>
+<p class="side-caption" id="chatsCaption">Chats History</p>
+<div class="chat-history" id="chatHistory"><div class="hist-empty">No chats yet — start one above.</div></div>
+<div class="side-nav">
+<p class="side-caption">Tools</p>
+<button class="nav-item" data-view="browser"><span>◉</span>Browser Agent</button>
+<button class="nav-item" data-view="history"><span>◷</span>Task History</button>
+<button class="nav-item" data-view="skills"><span>✳</span>Skills Library <b class="nav-count">8</b></button>
+<button class="nav-item" data-view="knowledge"><span>▤</span>Knowledge Base</button>
+<button class="nav-item" data-view="files"><span>▧</span>Files & Documents</button>
+<button class="nav-item" data-view="projects"><span>▦</span>Projects</button>
+<button class="nav-item" data-view="integrations"><span>⌘</span>Integrations</button>
+<button class="nav-item" data-view="settings"><span>⚙</span>Settings & API Keys</button>
+</div>
+<div class="sidebar-bottom">
+<button class="side-row dim" id="helpBtn"><span>?</span>Help & FAQ</button>
+<button class="side-row dim" id="exploreBtn"><span>✦</span>Explore Tools</button>
+<button class="side-row dim" id="goProSide"><span>★</span>Go Pro</button>
+<div class="user-row" id="profileRow"><div class="avatar" id="avatar">N</div><div class="user-meta"><strong id="userName">Nasim</strong><small id="userEmail">Personal account</small></div><span class="chev">›</span></div>
+<div class="status-chip"><span class="status-dot" id="healthDot"></span><small id="healthLabel">Connecting…</small></div>
+</div></aside>
+<div class="sidebar-scrim" id="scrim"></div>
+<main class="main-area">
+<header class="topbar"><button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation">☰</button><div class="breadcrumb"><span>VisaHOBe</span><span class="crumb-sep">/</span><strong id="pageName">Home</strong></div><div class="top-actions"><button class="pro-btn" id="goProTop">Go Pro</button><button class="icon-btn" id="topTheme" aria-label="Toggle theme">◐</button><div class="avatar small-avatar" id="avatarTop">N</div></div></header>
+<div class="content" id="content">
+
+<section class="view active" id="view-home">
+<div class="home-hero">
+<div class="greet-icon">|||</div>
+<h1 id="greeting">Good morning, Nasim</h1>
+<p class="greet-sub">How can I help you today?</p>
+</div>
+<div class="big-composer">
+<div class="attach-preview" id="attachPreview" hidden></div>
+<textarea id="taskPrompt" rows="4" placeholder="Imagine a lively cartoon character dressed in a..."></textarea>
+<div class="composer-controls">
+<div class="ctl-left">
+<button class="ctl-btn" id="attachBtn" aria-label="Attach image"><span>🖼</span></button>
+<button class="ctl-btn" id="imageModeBtn"><span>✦</span> Create an image</button>
+<button class="ctl-btn" id="webModeBtn"><span>🌐</span> Search the web</button>
+</div>
+<div class="ctl-right"><small class="model-label" id="homeModelLabel">Cloud engine</small><button class="send-round" id="runTask" aria-label="Send">→</button></div>
+<input type="file" id="imgInput" accept="image/*" hidden>
+</div>
+</div>
+<div class="quick-row">
+<button class="pill" data-quick="Help me write a professional cover letter for a Schengen visa application">Help me write</button>
+<button class="pill" data-quick="Learn about">Learn about</button>
+<button class="pill" data-quick="Analyze Image">Analyze Image</button>
+<button class="pill" data-quick="Summarize text">Summarize text</button>
+<button class="pill more" id="seeMore">+ See More</button>
+</div>
+<div class="models-section">
+<div class="models-head"><div class="models-title"><span class="green-dot"></span><h2>Available Models</h2></div><button class="text-btn" id="seeAllModels">See All</button></div>
+<div class="models-carousel">
+<button class="car-arrow" id="carPrev" aria-label="Previous models">‹</button>
+<div class="models-track" id="modelsTrack">
+<button class="model-card" data-model="Cloud engine"><span class="m-icon dark">✦</span><strong>VisaHOBe Cloud</strong><small>Working chat engine on your backend — answers instantly.</small></button>
+<button class="model-card" data-model="OpenAI GPT-4o mini"><span class="m-icon green">◐</span><strong>OpenAI GPT-4o mini</strong><small>Fast, affordable everyday model for writing and analysis.</small></button>
+<button class="model-card" data-model="OpenAI GPT-4o"><span class="m-icon dark">◆</span><strong>OpenAI GPT-4o</strong><small>Flagship multimodal model for complex reasoning and vision.</small></button>
+<button class="model-card" data-model="Google Gemini"><span class="m-icon blue">✧</span><strong>Google Gemini</strong><small>Google's multimodal model for chat, code and research.</small></button>
+<button class="model-card" data-model="Claude"><span class="m-icon orange">⬡</span><strong>Claude</strong><small>Careful, nuanced writing and thoughtful analysis.</small></button>
+</div>
+<button class="car-arrow" id="carNext" aria-label="Next models">›</button>
+</div>
+</div>
+<div class="section-heading"><div><h2>Recent tasks</h2><p>Your latest browser activity</p></div><button class="text-btn" data-goto="history">See history →</button></div>
+<div class="task-list" id="recentTasks"><div class="empty-state"><span>◷</span><strong>No tasks yet</strong><small>Your browser tasks will appear here.</small></div></div>
+<div class="home-footer"><span>✦ VisaHOBe Agent</span><span>Your personal AI workspace</span></div>
+</section>
+
+<section class="view" id="view-chat"><div class="page-intro slim"><h1 id="chatTitle">Chat</h1></div><div class="chat-panel"><div class="chat-messages" id="chatMessages"><div class="chat-welcome"><div class="ai-badge large">✦</div><h2>What's on your mind?</h2></div></div><div class="big-composer small"><textarea id="chatInput" rows="2" placeholder="Message VisaHOBe Agent…"></textarea><div class="composer-controls"><div class="ctl-left"></div><div class="ctl-right"><small class="model-label" id="chatModelLabel">Cloud engine</small><button class="send-round" id="chatSend" aria-label="Send message">→</button></div></div></div><p class="tiny-note" id="chatStatus"></p></div></section>
+
+<section class="view" id="view-browser"><div class="page-intro"><div class="eyebrow">BROWSER AUTOMATION</div><h1>Browser Agent</h1><p>Run a browser task and inspect its extracted page content.</p></div><div class="two-col"><div class="panel"><div class="panel-title"><span class="panel-icon">◉</span><div><h3>New browser task</h3><p>Choose a URL and execution mode.</p></div></div><label for="browserUrl">Starting website URL</label><input id="browserUrl" type="url" placeholder="https://example.com"><label for="browserPrompt">What should the agent do?</label><textarea id="browserPrompt" rows="4" placeholder="Describe the information you want to collect…"></textarea><div class="mode-toggle wide"><button class="mode-btn active" data-mode="local">▣ Cloud fetch</button><button class="mode-btn" data-mode="cloud">☁ Browser Use Cloud</button></div><button class="primary-btn full-btn" id="runBrowserTask">Start browser task ↗</button><p class="tiny-note">The cloud runner opens the page and extracts its text. Screenshots need the local Playwright build.</p></div><div class="panel browser-preview"><div class="preview-title"><div><h3>Browser preview</h3><p>Latest task result</p></div><span class="live-chip" id="previewStatus">Standby</span></div><div class="preview-screen" id="previewScreen"><div class="browser-chrome"><i></i><i></i><i></i><span>Browser preview</span></div><div class="preview-placeholder"><div class="globe">◎</div><strong>Your browser preview</strong><small>Run a task to see the result here.</small></div></div><div class="preview-actions"><button class="secondary-btn" id="openLastUrl">↗ Open URL</button><button class="secondary-btn" id="refreshTasks">↻ Refresh</button></div></div></div><div class="panel result-panel" id="browserResult"><div class="empty-state"><span>⌕</span><strong>Results will appear here</strong><small>Start a task to see the extracted page information.</small></div></div></section>
+
+<section class="view" id="view-history"><div class="page-intro"><div class="eyebrow">ACTIVITY</div><h1>Task history</h1><p>Review task results and execution status stored by this backend.</p></div><div class="panel"><div class="panel-title"><div><h3>All browser tasks</h3><p id="historyCount">Loading tasks…</p></div><button class="secondary-btn" id="historyRefresh">↻ Refresh</button></div><div class="task-list" id="allTasks"><div class="empty-state"><span>◷</span><strong>Loading history…</strong></div></div></div></section>
+
+<section class="view" id="view-projects"><div class="page-intro"><div class="eyebrow">PERSONAL WORKSPACE</div><h1>Projects & workspaces</h1><p>Keep tasks organized by project. This workspace is personal and local-first.</p></div><div class="workspace-card"><div class="workspace-icon big">V</div><div class="workspace-card-copy"><h3>Personal Workspace</h3><p>Browser tasks, chats, and settings for this installation.</p><span class="status-tag">● Active</span></div><span class="workspace-badge">CLOUD</span></div><div class="notice-card"><span>ⓘ</span><div><strong>Cloud sync is not configured</strong><p>Workspace persistence lives in the running backend. Configure a database adapter for multi-user cloud storage.</p></div></div></section>
+
+<section class="view" id="view-skills"><div class="page-intro"><div class="eyebrow">REUSABLE CAPABILITIES</div><h1>Skills library</h1><p>Choose a task template to populate the browser agent.</p></div><div class="skill-library" id="skillLibrary"></div></section>
+
+<section class="view" id="view-knowledge"><div class="page-intro"><div class="eyebrow">YOUR REFERENCE MATERIAL</div><h1>Knowledge base</h1><p>Manage notes for later use.</p></div><div class="panel upload-panel"><div class="upload-icon">▤</div><h3>Add reference notes</h3><p>Store plain-text notes in this browser for this device. Do not store passwords, API keys, or sensitive personal documents here.</p><textarea id="knowledgeInput" rows="5" placeholder="Paste public research notes or instructions…"></textarea><button class="primary-btn" id="saveKnowledge">Save note</button><div id="knowledgeList" class="knowledge-list"></div></div></section>
+
+<section class="view" id="view-files"><div class="page-intro"><div class="eyebrow">DOCUMENTS</div><h1>Files & documents</h1><p>File upload and persistent document processing are planned.</p></div><div class="notice-card"><span>▧</span><div><strong>Document workspace</strong><p>Next integration: validated file uploads, malware/type checks, local storage, and optional Knowledge Base indexing with real citations.</p></div></div></section>
+
+<section class="view" id="view-integrations"><div class="page-intro"><div class="eyebrow">CONNECT YOUR TOOLS</div><h1>Integrations</h1><p>Connect services only after adding credentials and testing their real authorization flow.</p></div><div class="integration-grid"><div class="integration-card"><div class="integration-logo google">G</div><div><strong>Google Workspace</strong><small>Gmail, Drive, Docs, Sheets, Calendar</small></div><span class="status-tag neutral">Setup needed</span><p>OAuth client and scopes required.</p></div><div class="integration-card"><div class="integration-logo github">⌘</div><div><strong>GitHub</strong><small>Repositories, issues, pull requests</small></div><span class="status-tag neutral">Setup needed</span><p>GitHub App or OAuth required.</p></div><div class="integration-card"><div class="integration-logo vercel">▲</div><div><strong>Vercel</strong><small>Projects and deployment status</small></div><span class="status-tag neutral">Setup needed</span><p>Vercel token and permissions required.</p></div><div class="integration-card"><div class="integration-logo cloudflare">☁</div><div><strong>Cloudflare</strong><small>Pages, zones and DNS metadata</small></div><span class="status-tag neutral">Setup needed</span><p>Restricted Cloudflare API token required.</p></div><div class="integration-card"><div class="integration-logo browseruse">◉</div><div><strong>Browser Use Cloud</strong><small>Remote browser sessions</small><span class="integration-inline" id="cloudIntegrationStatus">Not configured</span></div><button class="text-btn" data-goto="settings">Configure →</button></div><div class="integration-card"><div class="integration-logo gemini">✦</div><div><strong>Gemini AI</strong><small>Chat and task planning</small><span class="integration-inline" id="geminiIntegrationStatus">Checking…</span></div><button class="text-btn" data-goto="settings">Configure →</button></div></div></section>
+
+<section class="view" id="view-settings"><div class="page-intro"><div class="eyebrow">PREFERENCES & SECURITY</div><h1>Settings & API keys</h1><p>Secrets belong in the backend environment. This UI checks configuration but never asks you to save a key in browser storage.</p></div><div class="settings-grid"><div class="panel"><div class="panel-title"><div class="provider-logo gemini">✦</div><div><h3>AI Chat engine</h3><p>Gemini primary · fallback engine</p></div><span class="status-tag neutral" id="geminiStatus">Checking</span></div><div class="config-row"><span>API key</span><strong id="geminiKeyStatus">Not checked</strong></div><div class="config-row"><span>Model</span><strong>Configured on the backend</strong></div><div class="help-box">Add <code>GEMINI_API_KEY</code> on the backend (or ask the owner to set it) to enable AI chat. The backend keeps a working fallback engine for chat.</div><a class="external-link" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer">Get a Gemini API key ↗</a></div><div class="panel"><div class="panel-title"><div class="provider-logo browseruse">◉</div><div><h3>Browser Use Cloud</h3><p>Remote browser API v4</p></div><span class="status-tag neutral" id="browserUseStatus">Checking</span></div><div class="config-row"><span>API key</span><strong id="browserUseKeyStatus">Not checked</strong></div><div class="help-box">Add <code>BROWSER_USE_API_KEY</code> on the backend to enable cloud browser sessions.</div><a class="external-link" href="https://docs.browser-use.com/" target="_blank" rel="noreferrer">Browser Use documentation ↗</a></div><div class="panel"><div class="panel-title"><div class="provider-logo local">▣</div><div><h3>Cloud page reader</h3><p>Server-side fetch + text extraction</p></div><span class="status-tag good" id="localStatus">Checking</span></div><div class="config-row"><span>Backend health</span><strong id="backendHealth">Checking…</strong></div><div class="help-box">Browser tasks run on the cloud backend. Private/local network destinations are blocked for safety.</div></div><div class="panel"><div class="panel-title"><div class="provider-logo custom">⌘</div><div><h3>Custom AI provider</h3><p>Provider configuration</p></div></div><p class="panel-copy">Custom provider adapters are not wired yet. Add the endpoint and key through a server-side provider adapter before enabling it.</p><div class="help-box">Never paste a private key into this UI. Environment variables are safer.</div></div></div><div class="security-note"><span>♧</span><div><strong>Security by default</strong><p>Keys are read from backend environment variables, not saved in localStorage. Private/local network destinations are blocked by the browser backend.</p></div></div></section>
+
+</div>
+<nav class="mobile-nav" aria-label="Mobile navigation"><button class="mobile-nav-item active" data-view="home"><span>⌂</span><small>Home</small></button><button class="mobile-nav-item" data-view="chat"><span>✧</span><small>Chat</small></button><button class="mobile-nav-item" data-view="browser"><span>◉</span><small>Browser</small></button><button class="mobile-nav-item" data-view="skills"><span>✳</span><small>Skills</small></button><button class="mobile-nav-item" data-view="settings"><span>⚙</span><small>Settings</small></button></nav>
+</main></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/app.js" defer></script></body></html>

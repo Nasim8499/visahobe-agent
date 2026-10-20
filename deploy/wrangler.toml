@@ -1,0 +1,7 @@
+name = "visahobe-agent-api"
+main = "worker.js"
+compatibility_date = "2026-10-19"
+
+[[kv_namespaces]]
+binding = "TASKS_KV"
+id = "f944366758474948a5b8557cff869f7e"

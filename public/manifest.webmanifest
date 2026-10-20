@@ -1,0 +1,1 @@
+{"id":"/","name":"VisaHOBe Agent","short_name":"VisaHOBe","description":"Your personal AI browser and workspace","start_url":"/","scope":"/","display":"standalone","orientation":"any","background_color":"#f6f8fc","theme_color":"#f7f9ff","icons":[{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
